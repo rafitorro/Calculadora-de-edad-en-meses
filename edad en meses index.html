@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora de Edad en Meses Online Gratis</title>
+
+  <style>
+    body { font-family: Arial; background: #f4f4f4; text-align: center; padding: 50px; }
+    .container { background: white; padding: 30px; border-radius: 10px; max-width: 400px; margin: auto; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    input, button { padding: 10px; margin: 10px; width: 80%; }
+    button { background: #007BFF; color: white; border: none; cursor: pointer; }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Calculadora de Edad en Meses</h1>
+
+  <p>Calcula cuántos meses has vivido de forma rápida y gratuita.</p>
+
+  <input type="date" id="fecha">
+  <button onclick="calcularMeses()">Calcular</button>
+
+  <h2 id="resultado"></h2>
+
+  <h3>¿Cómo funciona?</h3>
+  <p>Introduce tu fecha de nacimiento y obtendrás tu edad en meses automáticamente.</p>
+</div>
+
+<script>
+function calcularMeses() {
+  const fecha = document.getElementById("fecha").value;
+
+  if (!fecha) {
+    document.getElementById("resultado").innerText = "Introduce una fecha.";
+    return;
+  }
+
+  const hoy = new Date();
+  const nacimiento = new Date(fecha);
+
+  const meses = (hoy.getFullYear() - nacimiento.getFullYear()) * 12 + (hoy.getMonth() - nacimiento.getMonth());
+
+  document.getElementById("resultado").innerText = "Has vivido " + meses + " meses.";
+}
+</script>
+
+</body>
+</html>
+
+<h2>Preguntas frecuentes</h2>
+
+<p><strong>¿Es precisa esta calculadora?</strong><br>
+Sí, calcula tu edad en meses de forma automática y precisa.</p>
+
+<p><strong>¿Puedo usarla gratis?</strong><br>
+Sí, es completamente gratuita.</p>
